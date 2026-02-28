@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Ayesha Banu – Portfolio</title>
+  <style>
+    /* ===== Reset & Basic Typography ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #e8f0ff 0%, #fffdfa 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    h1, h2 {
+      font-weight: 600;
+      letter-spacing: .5px;
+    }
+
+    /* ===== Layout ===== */
+    header {
+      background: #ffffffee;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,.05);
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    main {
+      width: 90%;
+      max-width: 960px;
+      margin: 2rem auto;
+      flex: 1;
+    }
+    footer {
+      background: #fff;
+      padding: 1rem;
+      text-align: center;
+      font-size: .9rem;
+      color: #555;
+      box-shadow: 0 -2px 8px rgba(0,0,0,.05);
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .tagline {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      margin-top: 3rem;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #0066cc;
+      padding-left: .6rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap: 1.25rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+      transition: transform .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card h3 {
+      margin-bottom: .5rem;
+      font-size: 1.2rem;
+    }
+    .card p {
+      font-size: .95rem;
+      color: #555;
+    }
+
+    /* ===== Contact ===== */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: .5rem;
+    }
+    .contact-links a {
+      background: #0066cc;
+      color: #fff;
+      padding: .5rem 1rem;
+      border-radius: 2rem;
+      transition: background .25s;
+      font-size: .9rem;
+    }
+    .contact-links a:hover {
+      background: #004999;
+    }
+
+    /* ===== Responsive ===== */
+    @media(max-width:480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .section-title {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav><strong>Ayesha Banu</strong></nav>
+  </header>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Hello, I'm Ayesha Banu</h1>
+      <p class="tagline">
+        B.Tech 1st Year CSE • Aspiring Developer passionate about learning & innovation
+      </p>
+    </section>
+
+    <!-- About -->
+    <section>
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I'm currently a second-year B.Tech Computer Science student, fascinated by how code can solve real-world problems. After mastering C programming in my first semester, I'm diving into Data Structures this term. I’ve also completed a Python Programming course and built a solid foundation in HTML and CSS (essentials & advanced). I’m eager to apply these skills to creative projects while continuously expanding my knowledge.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2 class="section-title">Skills</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>C Programming</h3>
+          <p>Completed coursework in procedural programming and problem-solving fundamentals.</p>
+        </div>
+        <div class="card">
+          <h3>Python Programming</h3>
+          <p>Finished Python course covering fundamentals, scripting, and basic libraries.</p>
+        </div>
+        <div class="card">
+          <h3>Data Structures (Learning)</h3>
+          <p>Currently exploring arrays, linked lists, stacks & queues with hands-on practice.</p>
+        </div>
+        <div class="card">
+          <h3>HTML5 & CSS3</h3>
+          <p>Semantic markup, responsive layouts, Flexbox, Grid, animations, and custom properties.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section>
+      <h2 class="section-title">Contact</h2>
+      <p>Let’s collaborate or just say hi:</p>
+      <div class="contact-links">
+        <a href="mailto:ayeshabhanu788@gmail.com">ayeshabhanu788@gmail.com</a>
+        <a
+          href="https://www.linkedin.com/in/ayesha-bhanu-278517326?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank" rel="noopener"
+        >LinkedIn</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    © <span id="year"></span> Ayesha Banu. All rights reserved.
+  </footer>
+  <script>
+    // Auto-update footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
